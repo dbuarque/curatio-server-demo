@@ -1,6 +1,6 @@
 # Dependencies
 
-- node
+- node 6.11
 - npm
 
 # Getting Started

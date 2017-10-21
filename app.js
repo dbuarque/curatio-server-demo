@@ -7,6 +7,8 @@ const express = require("express"),
 
 const app = (module.exports = express());
 app.set("port", process.env.PORT || 8000);
+app.set('view engine', 'ejs');
+app.set('views','./src/views');
 
 // generate new token middleware
 app.use(function (req, res, next) {
@@ -20,8 +22,9 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 
 // Redirect all non api requests to the index
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+app.get("/", function(req, res) {
+  const token = uuid();
+  res.render('index', { token });
 });
 
 // Starting express server

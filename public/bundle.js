@@ -11241,6 +11241,9 @@ var _reactRouterDom = __webpack_require__(196);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var tokenEl = document.getElementById("x-curatio-token");
+var tokenVal = tokenEl.dataset['token'];
+
 var App = function App() {
   return _react2.default.createElement(
     "div",
@@ -11248,7 +11251,8 @@ var App = function App() {
     _react2.default.createElement(
       "h1",
       null,
-      "Token:"
+      "Token: ",
+      tokenVal
     )
   );
 };
